@@ -5,11 +5,12 @@ import { outsideGrid } from "./grid.js"
 let lastRenderTime = 0
 let gameOver = false
 const gameBoard = document.getElementById('game-board')
+const lose = new Audio("./sound_effects/lose.mp3");
 
 
 function main (currentTime) {
     if (gameOver) {
-        
+        lose.play();
         if (confirm('YOU LOSE. Press OK to restart.')){
             window.location='/'
         }
@@ -44,4 +45,5 @@ function draw() {
 
 function checkDeath(){
     gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
+    
 }

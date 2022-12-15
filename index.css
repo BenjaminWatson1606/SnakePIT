@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
 body {
     height: 100vh;
     width: 100vw;
@@ -5,24 +11,54 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
-    background-color: black;
-  }
+    background: url("../img/bg.jpg");
+}
 
-  #game-board {
-    background-color: #CCC;
-    width: 100vmin;
-    height: 100vmin;
+#game-board {
+   background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
+    width: 90vmin;
+    height: 92vmin;
     display: grid;
     grid-template-rows: repeat(21, 1fr);
     grid-template-columns: repeat(21, 1fr);
-  }
+}
+#scoreBox{
+    position: absolute;
+    top: 9px;
+    right: 200px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+    color: #CCC;
+}
 
-  .snake {
+#hiscoreBox{
+    position: absolute;
+    top: 59px;
+    right: 110px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+    color: #CCC;
+}
+
+
+.snakehead {
+    background-color: hsl(330, 100%, 50%);
+    border: .05vmin solid black;
+}
+
+.snakebody{
     background-color: hsl(125, 100%, 50%);
-    border: .25vmin solid black;
-  }
+    border: .05vmin solid black;
+}
 
-  .food {
+.food {
     background-color: hsl(0, 100%, 50%);
     border: .25vmin solid black;
-  }
+    border-radius: 50%;
+    
+}
+
+
+  
