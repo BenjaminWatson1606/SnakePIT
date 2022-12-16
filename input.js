@@ -26,7 +26,10 @@ window.addEventListener('keydown', e =>{
 })
 
 
+
 export function getInputDirection() {
     lastInputDirection = inputDirection
     return inputDirection
 }
+
+//Ceci sont les contrôles pour le serpent, ils servent à dire où le serpent doit se déplacer.

@@ -2,9 +2,11 @@ import { onSnake, expandSnake } from "./snake.js"
 import { randomGridPosition } from "./grid.js"
 
 let food = getRandomFoodPosition ()
-const expansionRate = 1
-const crunch = new Audio("./sound_effects/crunch.mp3");
 
+const expansionRate = 1
+//Ceci contrôle à quelle point le serpent s'agrandi une fois avoir mangé de la nourriture.
+
+const crunch = new Audio("./sound_effects/crunch.mp3");
 let score = 0
 let hiscore = localStorage.getItem("hiscore");
 let hiscoreval = 0
@@ -16,7 +18,6 @@ let scoreBox = document.querySelector("#scoreBox")
 
 export function update() {
     if (onSnake(food)) {
-        crunch
         expandSnake(expansionRate)
         food = getRandomFoodPosition ()
         crunch.play();
@@ -29,6 +30,8 @@ export function update() {
         scoreBox.innerHTML = "Score: " + score;
     }
 }
+//Cette fonction met à jour le score, la taille du serpent et la position de la nourriture une fois que le serpent rentre en contact avec elle.
+
 
 if(hiscore === null){
     hiscoreval = 0;
@@ -38,6 +41,7 @@ else{
     hiscoreval = JSON.parse(hiscore);
     hiscoreBox.innerHTML = "HighScore: " + hiscore;
 }
+//Ceci garde en stockage dans le cache le High Score du joueur.
 
 
 export function draw(gameBoard) {
@@ -47,7 +51,11 @@ export function draw(gameBoard) {
         foodElement.style.gridColumnStart = food.x
         foodElement.classList.add('food')
         gameBoard.appendChild(foodElement)
+
 }
+//Cette fonction dessine l'élement "food" sur la gameboard.
+
+
 
 function getRandomFoodPosition(){
     let newFoodPosition
@@ -56,3 +64,6 @@ function getRandomFoodPosition(){
     }
     return newFoodPosition
 }
+//Cette fonction sert à donner une position random à la nourriture, elle ne peut pas être placé sur le serpent.
+
+

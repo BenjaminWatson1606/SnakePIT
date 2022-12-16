@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 *{
     padding: 0;
     margin: 0;
@@ -28,7 +28,7 @@ body {
     right: 200px;
     font-size: 39px;
     font-weight: bold;
-    font-family: 'New Tegomin', serif;
+    font-family: 'Roboto', serif;
     color: #CCC;
 }
 
@@ -38,10 +38,9 @@ body {
     right: 110px;
     font-size: 39px;
     font-weight: bold;
-    font-family: 'New Tegomin', serif;
+    font-family: 'Roboto', serif;
     color: #CCC;
 }
-
 
 .snakehead {
     background-color: hsl(330, 100%, 50%);
@@ -58,6 +57,10 @@ body {
     border: .25vmin solid black;
     border-radius: 50%;
     
+}
+
+.wall{
+    background-color:hsl(0, 0%, 0%) ;
 }
 
 
